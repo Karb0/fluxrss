@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121150022) do
+ActiveRecord::Schema.define(version: 20160121181942) do
 
   create_table "articles", force: :cascade do |t|
     t.boolean  "read",       default: false
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20160121150022) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.datetime "published"
+    t.string   "title"
+    t.string   "url"
   end
 
   add_index "articles", ["flux_id"], name: "index_articles_on_flux_id"

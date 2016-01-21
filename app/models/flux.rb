@@ -9,17 +9,20 @@ class Flux < ActiveRecord::Base
   end
 
   def actus
+    posts = []
     (Feedjira::Feed.fetch_and_parse url).entries.first(4).each do |entry|
       find = false
       self.articles.each do |article|
         if article.published == entry.published
           find = true
+          posts << article
         end
       end
       if !find
-        Article.create(flux_id: self.id, published: entry.published)
+        posts << Article.create(flux_id: self.id, published: entry.published, title: entry.title, url: entry.url)
       end
     end
+    posts
   end
 
 end

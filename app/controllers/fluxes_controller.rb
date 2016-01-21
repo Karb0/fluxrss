@@ -9,7 +9,7 @@ class FluxesController < ApplicationController
   end
 
   def create
-     @flux = current_user.fluxes.build(flux_params) 
+     @flux = current_user.fluxes.build(flux_params)
     if @flux.save
       redirect_to root_path
     else
@@ -18,6 +18,7 @@ class FluxesController < ApplicationController
   end
 
   private
+  
   def flux_params
     params.require(:flux).permit(:url)
   end
