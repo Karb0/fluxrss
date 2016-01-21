@@ -5,9 +5,12 @@
   .row
     - @fluxes.each do |flux|
       .col-md-6
-        %h1= flux.title
+        .panel-primary
+          .panel-heading
+            .panel-title
+              %h2= flux.title
         - flux.actus.each do |actu|
-          %p
-            = link_to actu.title, actu.entry_id, target: :blank
+          .panel-body
+            = link_to truncate(actu.title, length: 75), actu.entry_id, target: :blank
             = link_to root_path, method: :get do
-              %span.glyphicon.glyphicon-eye-close
+              %span.glyphicon.glyphicon-eye-close.pull-right

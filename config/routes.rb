@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   #Added by DOJO
 
   root 'users#dashboard'
-  resources :fluxes
+
+  resources :fluxes do
+    resources :articles
+  end
 
   #Added by DOJO
 
