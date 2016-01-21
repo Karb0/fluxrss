@@ -5,10 +5,23 @@
 .panel-primary
 {
   margin-top: 20px;
-}
 
-.panel-body
-{
-  background-color: #F1F1F1;
+  #test
+  {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
 
+    h2
+    {
+      font-size: 1.5em;
+    }
+  }
+
+  .panel-body
+  {
+    background-color: #E0E0E0;
+
+  }
 }

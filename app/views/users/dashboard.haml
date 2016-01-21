@@ -7,11 +7,11 @@
       .col-md-6
         .panel-primary
           .panel-heading
-            .panel-title
+            .panel-title#test
               %h2= flux.title
         - flux.actus.each do |actu|
           .panel-body
-            = link_to truncate(actu.title, length: 75), actu.url, target: :blank
+            = link_to truncate(actu.title, length: 60), actu.url, target: :blank
             = link_to flux_article_reading_path(flux_id: flux.id, article_id: actu.id), method: :get do
               - if actu.read
                 %span.glyphicon.glyphicon-eye-open.pull-right
