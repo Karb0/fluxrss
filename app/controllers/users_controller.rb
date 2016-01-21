@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include ActionView::Helpers::JavaScriptHelper
   def index
   end
 

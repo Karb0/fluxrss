@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #Added by DOJO
 
   root 'users#dashboard'
+  get '/dashboard' => "users#dashboard"
   resources :fluxes
 
   #Added by DOJO

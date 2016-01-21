@@ -15,3 +15,19 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+function executeQuery() {
+  $.ajax({
+    url: '/dashboard',
+    success: function(data) {
+      //console.log(data);
+      //$('#myfluxes').html('dddd')
+      $('#myfluxes').load('/dashboard #myfluxes')
+    }
+  });
+  setTimeout(executeQuery, 5000);
+}
+
+$(document).ready(function() {
+  setTimeout(executeQuery, 5000);
+});

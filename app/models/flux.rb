@@ -8,7 +8,7 @@ class Flux < ActiveRecord::Base
   end
 
   def actus
-    (Feedjira::Feed.fetch_and_parse url).entries.first(4)
+    (Feedjira::Feed.fetch_and_parse url).entries.first(2)
   end
 
 end
