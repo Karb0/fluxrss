@@ -1,0 +1,7 @@
+= @user.firstname
+= link_to "nouveau flux ", new_flux_path
+
+- @fluxes.each do |flux|
+  %h1= flux.title
+  - flux.actus.each do |actu|
+    %p= link_to actu.title, actu.entry_id, target: :blank
