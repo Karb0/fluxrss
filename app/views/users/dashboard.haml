@@ -7,4 +7,7 @@
       .col-md-6
         %h1= flux.title
         - flux.actus.each do |actu|
-          %p= link_to actu.title, actu.entry_id, target: :blank
+          %p
+            = link_to actu.title, actu.entry_id, target: :blank
+            = link_to root_path, method: :get do
+              %span.glyphicon.glyphicon-eye-close
