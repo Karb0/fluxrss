@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   root 'users#dashboard'
 
   resources :fluxes do
-    resources :articles
+    resources :articles do
+      get '/reading' => 'articles#is_reading', as: :reading
+    end
   end
 
   #Added by DOJO
