@@ -10,11 +10,14 @@
             .panel-title
               %h2= flux.title
               .line= link_to '', flux_path(flux.id), method: :delete, class: 'glyphicon glyphicon-remove white', data: { confirm: "Voulez-vous vraiment supprimer le flux \"#{flux.title}\" ?"}
-        - flux.actus.each do |actu|
           .panel-body
-            = link_to truncate(actu.title, length: 60), actu.url, target: :blank
-            = link_to flux_article_reading_path(flux_id: flux.id, article_id: actu.id), method: :get do
-              - if actu.read
-                %span.glyphicon.glyphicon-eye-open.pull-right
-              - else
-                %span.glyphicon.glyphicon-eye-close.pull-right
+            %ul.list-inline
+              - flux.actus.each do |actu|
+                %li
+                  = link_to truncate(actu.title, length: 60), actu.url, target: :blank
+                %li.line
+                  = link_to flux_article_reading_path(flux_id: flux.id, article_id: actu.id), method: :get do
+                    - if actu.read
+                      %span.glyphicon.glyphicon-eye-open.pull-right
+                    - else
+                      %span.glyphicon.glyphicon-eye-close.pull-right

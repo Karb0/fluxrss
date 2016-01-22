@@ -25,9 +25,9 @@ function executeQuery() {
      $('#myfluxes').load('/dashboard #myfluxes')
    }
  });
- setTimeout(executeQuery, 10000);
+ setTimeout(executeQuery, 300000);
 }
 
 $(document).ready(function() {
- setTimeout(executeQuery, 10000);
+ setTimeout(executeQuery, 300000);
 });

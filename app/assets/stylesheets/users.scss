@@ -21,8 +21,9 @@
     .line
     {
       float: right;
+      float: top;
       display: inline-block;
-      
+
       .white
       {
         color: white;
@@ -32,7 +33,11 @@
 
   .panel-body
   {
-    background-color: #E0E0E0;
+    background-color: #DDDDDD;
 
+    .line
+    {
+      float: right;
+    }
   }
 }
