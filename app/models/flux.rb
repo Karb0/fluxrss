@@ -30,8 +30,10 @@ class Flux < ActiveRecord::Base
   private 
 
   def clean_articles
-    if self.articles.count > MAX_ARTICLES
-      
+    arts = self.articles.order("published ASC")
+    while arts.count > MAX_ARTICLES
+      Article.destroy(arts[-1].id)
+      arts = self.articles.order("published ASC")
     end
   end
 

@@ -17,10 +17,23 @@ class FluxesController < ApplicationController
     end
   end
 
+  def destroy
+    flux = Flux.find(params[:id])
+    destroy_articles(flux)
+    flux.destroy
+    redirect_to root_path
+  end
+
   private
   
   def flux_params
     params.require(:flux).permit(:url)
+  end
+
+  def destroy_articles(flux)
+    flux.articles.each do |article|
+      article.destroy
+    end
   end
 
 end

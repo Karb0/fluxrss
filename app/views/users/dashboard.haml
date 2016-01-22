@@ -1,5 +1,5 @@
-= @user.firstname
-= link_to "nouveau flux ", new_flux_path
+= render 'shared/navigation'
+= render 'fluxes/new'
 
 .container
   .row#myfluxes
@@ -7,8 +7,9 @@
       .col-md-6
         .panel-primary
           .panel-heading
-            .panel-title#test
+            .panel-title
               %h2= flux.title
+              .line= link_to '', flux_path(flux.id), method: :delete, class: 'glyphicon glyphicon-remove white', data: { confirm: "Voulez-vous vraiment supprimer le flux \"#{flux.title}\" ?"}
         - flux.actus.each do |actu|
           .panel-body
             = link_to truncate(actu.title, length: 60), actu.url, target: :blank

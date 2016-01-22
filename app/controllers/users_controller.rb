@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def dashboard
     @user = current_user
     @fluxes = @user.fluxes
+    @flux = Flux.new
   end
 
 end

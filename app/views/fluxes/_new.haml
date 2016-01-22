@@ -1,0 +1,7 @@
+= form_for @flux do |f|
+  .row
+    .col-md-10.text-right
+      = f.text_field :url, placeholder: 'Saisir l\'url'
+    .col-md-2
+      .button
+        = f.submit 'Ajouter le flux'
